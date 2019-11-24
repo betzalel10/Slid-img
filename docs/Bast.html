@@ -1,0 +1,56 @@
+<style>
+body{margin: 0; padding: 0; border: 0;  }
+.topDiv{height: 500px; padding: 100px 0; background-color: blue}
+
+ul{position: relative;}
+li{position: absolute; width: 100%; top: 0; left: -100%;}
+img{width: 100%; height: 600px;}
+li > h1{color:deeppink; font: bold; position: absolute; right: 5%; top: 5%}
+
+li.show{left: 0;}
+
+
+
+</style>
+
+
+<div class="topDiv">
+    <ul>
+        <li class="show">
+            <h1>Lionel Messi the bast Socer player</h1>
+            <img src="img/1.jpg"/>
+        </li>
+        <li>
+            <h1>Michael Jordan the bast Basketball player</h1>
+            <img src="img/2.jpg"/>
+        </li>
+        <li>
+            <h1>Tom Brady the bast Football player</h1>
+            <img src="img/3.jpg"/>
+        </li>
+        <li>
+            <h1>Muhammad Ali the bast Boxer</h1>
+            <img src="img/4.jpg"/>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+    let liIndex = 0
+    let limax = 3
+
+    function showItem(){
+        let hideli = document.querySelectorAll('li')[liIndex]
+        hideli.className = ''
+
+        if(liIndex >= limax){
+            liIndex = -1
+        }
+
+        let showli = document.querySelectorAll('li')[++liIndex]
+        showli.className = 'show'
+    }
+
+    setInterval(showItem, 2000)
+</script>
